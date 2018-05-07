@@ -21,10 +21,10 @@ RUN addgroup -Sg 400 g$USERNAME \
 
 VOLUME ["/fossils"]
 
-WORKDIR "/fossils"
+WORKDIR ["/fossils"]
 
 EXPOSE 8181
 
-#USER $USERNAME
+ENTRYPOINT ["/usr/local/bin/fossil"]
 
-CMD /usr/local/bin/fossil server --repolist --port 8181 --skin ardoise /fossils
+CMD ["server","--repolist","--port","8181","--skin","ardoise","/fossils"]

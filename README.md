@@ -27,3 +27,11 @@ You can also point Fossil to your own pre-existing folder of repositories:
 ```
 $ docker run -p 8181:8181 -v /data/fossils:/fossils -d --name myfosrepos dhylton/fossilrepo
 ```
+
+You can also run arbitrary fossil commands:
+
+```
+$ docker run --it --rm dhylton/fossilrepo version
+$ docker run --it --rm -v ~/fossils:/fossils dhylton/fossilrepo info -R /fossils/somerepo.fossil
+```
+
